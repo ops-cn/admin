@@ -1,13 +1,13 @@
 package api
 
 import (
-	"github.com/ops-cn/common/captcha"
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
 	"github.com/ops-cn/admin/app/bll"
 	"github.com/ops-cn/admin/app/config"
 	"github.com/ops-cn/admin/app/ginplus"
 	"github.com/ops-cn/admin/app/schema"
+	"github.com/ops-cn/common/captcha"
 	"github.com/ops-cn/common/errors"
 	"github.com/ops-cn/common/logger"
 )

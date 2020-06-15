@@ -1,7 +1,7 @@
 package api
 
 import (
-	"github.com/LyricTian/captcha"
+	"github.com/ops-cn/common/captcha"
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
 	"github.com/ops-cn/admin/app/bll"

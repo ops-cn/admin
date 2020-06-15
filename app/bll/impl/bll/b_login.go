@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"sort"
 
-	"github.com/LyricTian/captcha"
+	"github.com/ops-cn/common/captcha"
 	"github.com/google/wire"
 	"github.com/ops-cn/admin/app/bll"
 	"github.com/ops-cn/admin/app/model"

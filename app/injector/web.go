@@ -10,11 +10,17 @@ import (
 	swaggerFiles "github.com/swaggo/gin-swagger/swaggerFiles"
 )
 
+var app *gin.Engine
+
+func GetRouter() *gin.Engine {
+	return app
+}
+
 // InitGinEngine 初始化gin引擎
 func InitGinEngine(r router.IRouter) *gin.Engine {
 	gin.SetMode(config.C.RunMode)
 
-	app := gin.New()
+	app = gin.New()
 	app.NoMethod(middleware.NoMethodHandler())
 	app.NoRoute(middleware.NoRouteHandler())
 

@@ -121,10 +121,10 @@ func Init(ctx context.Context, opts ...Option) (func(), error) {
 	}
 
 	// 初始化HTTP服务
-	httpServerCleanFunc := InitHTTPServer(ctx, injector.Engine)
+	//httpServerCleanFunc := InitHTTPServer(ctx, injector.Engine)
 
 	return func() {
-		httpServerCleanFunc()
+		//httpServerCleanFunc()
 		injectorCleanFunc()
 		loggerCleanFunc()
 	}, nil

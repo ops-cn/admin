@@ -2,11 +2,11 @@ package main
 
 import (
 	"context"
-	"os"
-
+	"github.com/micro/cli/v2"
+	"github.com/micro/go-micro/v2/web"
 	"github.com/ops-cn/admin/app"
+	"github.com/ops-cn/admin/app/injector"
 	"github.com/ops-cn/common/logger"
-	"github.com/urfave/cli/v2"
 )
 
 // VERSION 版本号，可以通过编译的方式指定版本号：go build -ldflags "-X main.VERSION=x.x.x"
@@ -16,20 +16,51 @@ func main() {
 	logger.SetVersion(VERSION)
 	ctx := logger.NewTraceIDContext(context.Background(), "main")
 
-	app := cli.NewApp()
-	app.Name = "gin-admin"
-	app.Version = VERSION
-	app.Usage = "RBAC scaffolding based on GIN + GORM/MONGO + CASBIN + WIRE."
-	app.Commands = []*cli.Command{
-		newWebCmd(ctx),
+	service := web.NewService(
+		web.Name("ops-cn.admin"),
+		web.Flags(
+			&cli.StringFlag{
+				Name:     "conf",
+				Aliases:  []string{"c"},
+				Usage:    "配置文件(.json,.yaml,.toml)",
+				Required: true,
+			},
+			&cli.StringFlag{
+				Name:     "model",
+				Aliases:  []string{"m"},
+				Usage:    "casbin的访问控制模型(.conf)",
+				Required: true,
+			},
+			&cli.StringFlag{
+				Name:  "menu",
+				Usage: "初始化菜单数据配置文件(.yaml)",
+			},
+			&cli.StringFlag{
+				Name:  "www",
+				Usage: "静态站点目录",
+			},
+		),
+		web.Address(":10088"),
+	)
+	service.Init(
+		web.Action(func(c *cli.Context) {
+			app.Init(
+				ctx,
+				app.SetConfigFile(c.String("conf")),
+				app.SetModelFile(c.String("model")),
+				app.SetWWWDir(c.String("www")),
+				app.SetMenuFile(c.String("menu")),
+				app.SetVersion(VERSION))
+		}),
+	)
+	service.Handle("/", injector.GetRouter())
+	if err := service.Run(); err != nil {
+		panic(err)
 	}
-	err := app.Run(os.Args)
-	if err != nil {
-		logger.Errorf(ctx, err.Error())
-	}
+
 }
 
-func newWebCmd(ctx context.Context) *cli.Command {
+/*func newWebCmd(ctx context.Context) *cli.Command {
 	return &cli.Command{
 		Name:  "web",
 		Usage: "运行web服务",
@@ -64,4 +95,4 @@ func newWebCmd(ctx context.Context) *cli.Command {
 				app.SetVersion(VERSION))
 		},
 	}
-}
+}*/

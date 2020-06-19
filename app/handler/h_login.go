@@ -4,12 +4,10 @@ import (
 	"context"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/google/wire"
-	"github.com/micro/go-micro/v2/metadata"
 	"github.com/ops-cn/admin/app/bll"
 	"github.com/ops-cn/admin/app/model"
 	"github.com/ops-cn/common/auth"
 	"github.com/ops-cn/common/captcha"
-	"github.com/ops-cn/common/errors"
 	proto "github.com/ops-cn/proto/admin/login"
 	"github.com/ops-cn/proto/unified"
 )
@@ -44,7 +42,7 @@ func (loginService *LoginService) GetCaptcha(ctx context.Context, req *proto.Len
 }
 
 func (loginService *LoginService) ResCaptcha(ctx context.Context, req *proto.LoginCaptcha, res *unified.Response) error {
-	md, ok := metadata.FromContext(ctx)
+	/*md, ok := metadata.FromContext(ctx)
 	err := captcha.WriteImage(w, captchaID, width, height)
 	if err != nil {
 		if err == captcha.ErrNotFound {
@@ -56,6 +54,6 @@ func (loginService *LoginService) ResCaptcha(ctx context.Context, req *proto.Log
 		w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
 	w.Header().Set("Pragma", "no-cache")
 	w.Header().Set("Expires", "0")
-	w.Header().Set("Content-Type", "image/png")
+	w.Header().Set("Content-Type", "image/png")*/
 	return nil
 }

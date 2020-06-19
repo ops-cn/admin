@@ -8,8 +8,8 @@ import (
 	"github.com/casbin/casbin/v2/persist"
 	"github.com/google/wire"
 	"github.com/ops-cn/admin/app/model"
-	"github.com/ops-cn/admin/app/schema"
 	"github.com/ops-cn/common/logger"
+	"github.com/ops-cn/common/schema"
 )
 
 var _ persist.Adapter = (*CasbinAdapter)(nil)

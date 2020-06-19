@@ -7,8 +7,8 @@ import (
 	"github.com/jinzhu/gorm"
 	"github.com/ops-cn/admin/app/model"
 	"github.com/ops-cn/admin/app/model/impl/gorm/entity"
-	"github.com/ops-cn/admin/app/schema"
 	"github.com/ops-cn/common/errors"
+	"github.com/ops-cn/common/schema"
 )
 
 var _ model.IRoleMenu = (*RoleMenu)(nil)

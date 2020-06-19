@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 
 	"github.com/jinzhu/gorm"
-	"github.com/ops-cn/admin/app/config"
 	igorm "github.com/ops-cn/admin/app/model/impl/gorm"
+	"github.com/ops-cn/common/config"
 )
 
 // InitGormDB 初始化gorm存储

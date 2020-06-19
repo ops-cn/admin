@@ -2,11 +2,11 @@ package injector
 
 import (
 	jwt "github.com/dgrijalva/jwt-go"
-	"github.com/ops-cn/admin/app/config"
 	"github.com/ops-cn/common/auth"
 	"github.com/ops-cn/common/auth/jwtauth"
 	"github.com/ops-cn/common/auth/jwtauth/store/buntdb"
 	"github.com/ops-cn/common/auth/jwtauth/store/redis"
+	"github.com/ops-cn/common/config"
 )
 
 // InitAuth 初始化用户认证

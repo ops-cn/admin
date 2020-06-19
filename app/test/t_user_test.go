@@ -4,7 +4,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/ops-cn/admin/app/schema"
+	"github.com/ops-cn/common/schema"
 	"github.com/ops-cn/common/unique"
 	"github.com/ops-cn/common/util"
 	"github.com/stretchr/testify/assert"

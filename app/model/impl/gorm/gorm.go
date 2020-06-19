@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/jinzhu/gorm"
-	"github.com/ops-cn/admin/app/config"
 	"github.com/ops-cn/admin/app/model/impl/gorm/entity"
+	"github.com/ops-cn/common/config"
 	"github.com/ops-cn/common/logger"
 
 	// gorm存储注入

@@ -5,13 +5,13 @@ import (
 	"net/http"
 	"sort"
 
-	"github.com/ops-cn/common/captcha"
 	"github.com/google/wire"
 	"github.com/ops-cn/admin/app/bll"
 	"github.com/ops-cn/admin/app/model"
-	"github.com/ops-cn/admin/app/schema"
 	"github.com/ops-cn/common/auth"
+	"github.com/ops-cn/common/captcha"
 	"github.com/ops-cn/common/errors"
+	"github.com/ops-cn/common/schema"
 	"github.com/ops-cn/common/util"
 )
 

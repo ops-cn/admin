@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ops-cn/admin/app/config"
+	"github.com/ops-cn/common/config"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )

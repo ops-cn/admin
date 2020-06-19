@@ -3,7 +3,7 @@ package model
 import (
 	"context"
 
-	"github.com/ops-cn/admin/app/schema"
+	"github.com/ops-cn/common/schema"
 )
 
 // IMenuActionResource 菜单动作关联资源管理存储接口

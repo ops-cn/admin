@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/casbin/casbin/v2"
-	"github.com/ops-cn/admin/app/config"
+	"github.com/ops-cn/common/config"
 	"github.com/ops-cn/common/logger"
 )
 

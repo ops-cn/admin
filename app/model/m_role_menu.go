@@ -3,7 +3,7 @@ package model
 import (
 	"context"
 
-	"github.com/ops-cn/admin/app/schema"
+	"github.com/ops-cn/common/schema"
 )
 
 // IRoleMenu 角色菜单存储接口

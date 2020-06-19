@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/ops-cn/admin/app/config"
 	imongo "github.com/ops-cn/admin/app/model/impl/mongo"
+	"github.com/ops-cn/common/config"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 

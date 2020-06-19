@@ -108,7 +108,7 @@ Enable = true
 # 签名方式(支持：HS512/HS384/HS512)
 SigningMethod = "HS512"
 # 签名key
-SigningKey = "gin-admin"
+SigningKey = "abcdefgh12345678"
 # 过期时间（单位秒）
 Expired = 7200
 # 存储(支持：file/redis)

@@ -5,7 +5,7 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"github.com/ops-cn/admin/app/config"
+	"github.com/ops-cn/common/config"
 )
 
 // CORSMiddleware 跨域请求中间件

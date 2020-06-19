@@ -3,7 +3,7 @@ package bll
 import (
 	"context"
 
-	"github.com/ops-cn/admin/app/schema"
+	"github.com/ops-cn/common/schema"
 )
 
 // IMenu 菜单管理业务逻辑接口

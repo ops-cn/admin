@@ -10,8 +10,8 @@ import (
 	"net/url"
 
 	"github.com/gin-gonic/gin"
-	"github.com/ops-cn/admin/app/config"
 	"github.com/ops-cn/admin/app/injector"
+	"github.com/ops-cn/common/config"
 )
 
 const (

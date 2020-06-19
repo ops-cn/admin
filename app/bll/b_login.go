@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/ops-cn/admin/app/schema"
+	"github.com/ops-cn/common/schema"
 )
 
 // ILogin 登录业务逻辑接口

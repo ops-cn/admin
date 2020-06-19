@@ -13,11 +13,11 @@ import (
 
 	"github.com/go-redis/redis"
 	"github.com/google/gops/agent"
-	"github.com/ops-cn/admin/app/config"
 	"github.com/ops-cn/admin/app/injector"
 	"github.com/ops-cn/admin/app/iutil"
 	"github.com/ops-cn/common/captcha"
 	"github.com/ops-cn/common/captcha/store"
+	"github.com/ops-cn/common/config"
 	"github.com/ops-cn/common/logger"
 
 	// 引入swagger

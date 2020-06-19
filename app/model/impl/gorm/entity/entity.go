@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/jinzhu/gorm"
-	"github.com/ops-cn/admin/app/config"
 	"github.com/ops-cn/admin/app/icontext"
+	"github.com/ops-cn/common/config"
 )
 
 // Model base model

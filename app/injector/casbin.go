@@ -5,7 +5,7 @@ import (
 
 	"github.com/casbin/casbin/v2"
 	"github.com/casbin/casbin/v2/persist"
-	"github.com/ops-cn/admin/app/config"
+	"github.com/ops-cn/common/config"
 )
 
 // InitCasbin 初始化casbin

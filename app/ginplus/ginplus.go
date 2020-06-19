@@ -7,9 +7,9 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
-	"github.com/ops-cn/admin/app/schema"
 	"github.com/ops-cn/common/errors"
 	"github.com/ops-cn/common/logger"
+	"github.com/ops-cn/common/schema"
 	"github.com/ops-cn/common/util"
 )
 

@@ -8,8 +8,8 @@ import (
 	"github.com/ops-cn/admin/app/bll"
 	"github.com/ops-cn/admin/app/iutil"
 	"github.com/ops-cn/admin/app/model"
-	"github.com/ops-cn/admin/app/schema"
 	"github.com/ops-cn/common/errors"
+	"github.com/ops-cn/common/schema"
 )
 
 var _ bll.IRole = (*Role)(nil)

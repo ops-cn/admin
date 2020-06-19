@@ -1,7 +1,7 @@
 package iutil
 
 import (
-	"github.com/ops-cn/admin/app/config"
+	"github.com/ops-cn/common/config"
 	"github.com/ops-cn/common/logger"
 	"github.com/ops-cn/common/trace"
 	"github.com/ops-cn/common/unique"

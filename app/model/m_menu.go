@@ -3,7 +3,7 @@ package model
 import (
 	"context"
 
-	"github.com/ops-cn/admin/app/schema"
+	"github.com/ops-cn/common/schema"
 )
 
 // IMenu 菜单管理存储接口

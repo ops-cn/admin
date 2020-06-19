@@ -3,7 +3,7 @@ package model
 import (
 	"context"
 
-	"github.com/ops-cn/admin/app/schema"
+	"github.com/ops-cn/common/schema"
 )
 
 // IMenuAction 菜单动作管理存储接口

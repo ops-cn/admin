@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/jinzhu/gorm"
-	"github.com/ops-cn/admin/app/schema"
+	"github.com/ops-cn/common/schema"
 	"github.com/ops-cn/common/util"
 )
 

@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/ops-cn/admin/app/config"
+	"github.com/ops-cn/common/config"
 	"github.com/ops-cn/common/logger"
 	loggerhook "github.com/ops-cn/common/logger/hook"
 	loggergormhook "github.com/ops-cn/common/logger/hook/gorm"

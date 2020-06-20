@@ -8,8 +8,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/ops-cn/admin/app/ginplus"
 	"github.com/ops-cn/common/config"
+	"github.com/ops-cn/common/ginplus"
 )
 
 // CopyBodyMiddleware Copy body

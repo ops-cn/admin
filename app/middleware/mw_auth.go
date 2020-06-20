@@ -2,11 +2,11 @@ package middleware
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/ops-cn/admin/app/ginplus"
-	"github.com/ops-cn/admin/app/icontext"
 	"github.com/ops-cn/common/auth"
 	"github.com/ops-cn/common/config"
 	"github.com/ops-cn/common/errors"
+	"github.com/ops-cn/common/ginplus"
+	"github.com/ops-cn/common/icontext"
 	"github.com/ops-cn/common/logger"
 )
 

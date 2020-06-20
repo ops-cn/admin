@@ -4,6 +4,7 @@ import (
 	"context"
 	"crypto/tls"
 	"fmt"
+	"github.com/ops-cn/common/uuid"
 	"net/http"
 	"os"
 	"os/signal"
@@ -14,7 +15,6 @@ import (
 	"github.com/go-redis/redis"
 	"github.com/google/gops/agent"
 	"github.com/ops-cn/admin/app/injector"
-	"github.com/ops-cn/admin/app/iutil"
 	"github.com/ops-cn/common/captcha"
 	"github.com/ops-cn/common/captcha/store"
 	"github.com/ops-cn/common/config"
@@ -92,7 +92,7 @@ func Init(ctx context.Context, opts ...Option) (func(), error) {
 	logger.Printf(ctx, "服务启动，运行模式：%s，版本号：%s，进程号：%d", config.C.RunMode, o.Version, os.Getpid())
 
 	// Initialize unique id
-	iutil.InitID()
+	uuid.InitID()
 
 	// 初始化日志模块
 	loggerCleanFunc, err := InitLogger()

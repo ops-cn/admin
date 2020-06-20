@@ -2,7 +2,7 @@ package middleware
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/ops-cn/admin/app/icontext"
+	"github.com/ops-cn/common/icontext"
 	"github.com/ops-cn/common/logger"
 	"github.com/ops-cn/common/trace"
 )

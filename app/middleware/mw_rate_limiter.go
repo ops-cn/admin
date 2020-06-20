@@ -7,9 +7,9 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/go-redis/redis"
 	"github.com/go-redis/redis_rate"
-	"github.com/ops-cn/admin/app/ginplus"
 	"github.com/ops-cn/common/config"
 	"github.com/ops-cn/common/errors"
+	"github.com/ops-cn/common/ginplus"
 	"golang.org/x/time/rate"
 )
 

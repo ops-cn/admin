@@ -2,11 +2,11 @@ package bll
 
 import (
 	"context"
+	"github.com/ops-cn/common/uuid"
 	"os"
 
 	"github.com/google/wire"
 	"github.com/ops-cn/admin/app/bll"
-	"github.com/ops-cn/admin/app/iutil"
 	"github.com/ops-cn/admin/app/model"
 	"github.com/ops-cn/common/errors"
 	"github.com/ops-cn/common/schema"
@@ -177,7 +177,7 @@ func (a *Menu) Create(ctx context.Context, item schema.Menu) (*schema.IDResult, 
 		return nil, err
 	}
 	item.ParentPath = parentPath
-	item.ID = iutil.NewID()
+	item.ID = uuid.NewID()
 
 	err = ExecTrans(ctx, a.TransModel, func(ctx context.Context) error {
 		err := a.createActions(ctx, item.ID, item.Actions)
@@ -197,7 +197,7 @@ func (a *Menu) Create(ctx context.Context, item schema.Menu) (*schema.IDResult, 
 // 创建动作数据
 func (a *Menu) createActions(ctx context.Context, menuID string, items schema.MenuActions) error {
 	for _, item := range items {
-		item.ID = iutil.NewID()
+		item.ID = uuid.NewID()
 		item.MenuID = menuID
 		err := a.MenuActionModel.Create(ctx, *item)
 		if err != nil {
@@ -205,7 +205,7 @@ func (a *Menu) createActions(ctx context.Context, menuID string, items schema.Me
 		}
 
 		for _, ritem := range item.Resources {
-			ritem.ID = iutil.NewID()
+			ritem.ID = uuid.NewID()
 			ritem.ActionID = item.ID
 			err := a.MenuActionResourceModel.Create(ctx, *ritem)
 			if err != nil {
@@ -322,7 +322,7 @@ func (a *Menu) updateActions(ctx context.Context, menuID string, oldItems, newIt
 		// 计算需要更新的资源配置（只包括新增和删除的，更新的不关心）
 		addResources, delResources := a.compareResources(ctx, oitem.Resources, item.Resources)
 		for _, aritem := range addResources {
-			aritem.ID = iutil.NewID()
+			aritem.ID = uuid.NewID()
 			aritem.ActionID = oitem.ID
 			err := a.MenuActionResourceModel.Create(ctx, *aritem)
 			if err != nil {

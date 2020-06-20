@@ -4,7 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
 	"github.com/ops-cn/admin/app/bll"
-	"github.com/ops-cn/admin/app/ginplus"
+	"github.com/ops-cn/common/ginplus"
 	"github.com/ops-cn/common/schema"
 )
 

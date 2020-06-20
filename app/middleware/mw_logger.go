@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/ops-cn/admin/app/ginplus"
+	"github.com/ops-cn/common/ginplus"
 	"github.com/ops-cn/common/logger"
 )
 

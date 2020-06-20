@@ -3,9 +3,9 @@ package middleware
 import (
 	"github.com/casbin/casbin/v2"
 	"github.com/gin-gonic/gin"
-	"github.com/ops-cn/admin/app/ginplus"
 	"github.com/ops-cn/common/config"
 	"github.com/ops-cn/common/errors"
+	"github.com/ops-cn/common/ginplus"
 )
 
 // CasbinMiddleware casbin中间件

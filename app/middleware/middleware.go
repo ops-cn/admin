@@ -5,8 +5,8 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"github.com/ops-cn/admin/app/ginplus"
 	"github.com/ops-cn/common/errors"
+	"github.com/ops-cn/common/ginplus"
 )
 
 // NoMethodHandler 未找到请求方法的处理函数

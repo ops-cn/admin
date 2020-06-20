@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/jinzhu/gorm"
-	"github.com/ops-cn/admin/app/icontext"
+	"github.com/ops-cn/common/icontext"
 	"github.com/ops-cn/common/schema"
 )
 

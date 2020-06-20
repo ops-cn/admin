@@ -5,9 +5,9 @@ import (
 
 	"github.com/google/wire"
 	"github.com/jinzhu/gorm"
-	"github.com/ops-cn/admin/app/icontext"
 	"github.com/ops-cn/admin/app/model"
 	"github.com/ops-cn/common/errors"
+	"github.com/ops-cn/common/icontext"
 )
 
 var _ model.ITrans = new(Trans)

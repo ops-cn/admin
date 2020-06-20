@@ -1,11 +1,11 @@
 package injector
 
 import (
-	"github.com/LyricTian/gzip"
 	"github.com/gin-gonic/gin"
 	"github.com/ops-cn/admin/app/middleware"
 	"github.com/ops-cn/admin/app/router"
 	"github.com/ops-cn/common/config"
+	"github.com/ops-cn/common/thirdparty/gzip"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	swaggerFiles "github.com/swaggo/gin-swagger/swaggerFiles"
 )

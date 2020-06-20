@@ -2,7 +2,7 @@ package bll
 
 import (
 	"context"
-	"github.com/ops-cn/common/uuid"
+	"github.com/ops-cn/common/util/uuid"
 
 	"github.com/google/wire"
 	"github.com/ops-cn/admin/app/bll"

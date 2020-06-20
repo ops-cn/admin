@@ -4,7 +4,7 @@ import (
 	"context"
 	"crypto/tls"
 	"fmt"
-	"github.com/ops-cn/common/uuid"
+	"github.com/ops-cn/common/util/uuid"
 	"net/http"
 	"os"
 	"os/signal"

@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/ops-cn/common/schema"
-	"github.com/ops-cn/common/unique"
+	"github.com/ops-cn/common/util/unique"
 	"github.com/stretchr/testify/assert"
 )
 

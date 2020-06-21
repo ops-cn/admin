@@ -2,7 +2,7 @@ package bll
 
 import (
 	"context"
-	"github.com/ops-cn/common/util/uuid"
+	"github.com/ops-cn/common/noworker"
 
 	"github.com/casbin/casbin/v2"
 	"github.com/google/wire"
@@ -67,10 +67,10 @@ func (a *Role) Create(ctx context.Context, item schema.Role) (*schema.IDResult, 
 		return nil, err
 	}
 
-	item.ID = uuid.NewID()
+	item.ID = noworker.NewID()
 	err = ExecTrans(ctx, a.TransModel, func(ctx context.Context) error {
 		for _, rmItem := range item.RoleMenus {
-			rmItem.ID = uuid.NewID()
+			rmItem.ID = noworker.NewID()
 			rmItem.RoleID = item.ID
 			err := a.RoleMenuModel.Create(ctx, *rmItem)
 			if err != nil {
@@ -119,7 +119,7 @@ func (a *Role) Update(ctx context.Context, id string, item schema.Role) error {
 	err = ExecTrans(ctx, a.TransModel, func(ctx context.Context) error {
 		addRoleMenus, delRoleMenus := a.compareRoleMenus(ctx, oldItem.RoleMenus, item.RoleMenus)
 		for _, rmitem := range addRoleMenus {
-			rmitem.ID = uuid.NewID()
+			rmitem.ID = noworker.NewID()
 			rmitem.RoleID = id
 			err := a.RoleMenuModel.Create(ctx, *rmitem)
 			if err != nil {

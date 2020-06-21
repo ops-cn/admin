@@ -7,7 +7,7 @@ import (
 	"github.com/ops-cn/admin/app/bll"
 	"github.com/ops-cn/admin/app/model"
 	"github.com/ops-cn/common/auth"
-	"github.com/ops-cn/common/captcha"
+	"github.com/ops-cn/common/thirdparty/captcha"
 	proto "github.com/ops-cn/proto/admin/login"
 	"github.com/ops-cn/proto/unified"
 )

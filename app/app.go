@@ -4,7 +4,7 @@ import (
 	"context"
 	"crypto/tls"
 	"fmt"
-	"github.com/ops-cn/common/util/uuid"
+	"github.com/ops-cn/common/noworker"
 	"net/http"
 	"os"
 	"os/signal"
@@ -15,10 +15,10 @@ import (
 	"github.com/go-redis/redis"
 	"github.com/google/gops/agent"
 	"github.com/ops-cn/admin/app/injector"
-	"github.com/ops-cn/common/captcha"
-	"github.com/ops-cn/common/captcha/store"
 	"github.com/ops-cn/common/config"
 	"github.com/ops-cn/common/logger"
+	"github.com/ops-cn/common/thirdparty/captcha"
+	"github.com/ops-cn/common/thirdparty/captcha/store"
 
 	// 引入swagger
 	_ "github.com/ops-cn/admin/app/swagger"
@@ -92,7 +92,7 @@ func Init(ctx context.Context, opts ...Option) (func(), error) {
 	logger.Printf(ctx, "服务启动，运行模式：%s，版本号：%s，进程号：%d", config.C.RunMode, o.Version, os.Getpid())
 
 	// Initialize unique id
-	uuid.InitID()
+	noworker.InitID()
 
 	// 初始化日志模块
 	loggerCleanFunc, err := InitLogger()

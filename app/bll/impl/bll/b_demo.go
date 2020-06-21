@@ -2,7 +2,7 @@ package bll
 
 import (
 	"context"
-	"github.com/ops-cn/common/util/uuid"
+	"github.com/ops-cn/common/noworker"
 
 	"github.com/google/wire"
 	"github.com/ops-cn/admin/app/bll"
@@ -61,7 +61,7 @@ func (a *Demo) Create(ctx context.Context, item schema.Demo) (*schema.IDResult, 
 		return nil, err
 	}
 
-	item.ID = uuid.NewID()
+	item.ID = noworker.NewID()
 	err = a.DemoModel.Create(ctx, item)
 	if err != nil {
 		return nil, err

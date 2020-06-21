@@ -2,13 +2,12 @@ package bll
 
 import (
 	"context"
-	"github.com/ops-cn/common/util/uuid"
-
 	"github.com/casbin/casbin/v2"
 	"github.com/google/wire"
 	"github.com/ops-cn/admin/app/bll"
 	"github.com/ops-cn/admin/app/model"
 	"github.com/ops-cn/common/errors"
+	"github.com/ops-cn/common/noworker"
 	"github.com/ops-cn/common/schema"
 	"github.com/ops-cn/common/util"
 )
@@ -86,10 +85,10 @@ func (a *User) Create(ctx context.Context, item schema.User) (*schema.IDResult, 
 	}
 
 	item.Password = util.SHA1HashString(item.Password)
-	item.ID = uuid.NewID()
+	item.ID = noworker.NewID()
 	err = ExecTrans(ctx, a.TransModel, func(ctx context.Context) error {
 		for _, urItem := range item.UserRoles {
-			urItem.ID = uuid.NewID()
+			urItem.ID = noworker.NewID()
 			urItem.UserID = item.ID
 			err := a.UserRoleModel.Create(ctx, *urItem)
 			if err != nil {
@@ -150,7 +149,7 @@ func (a *User) Update(ctx context.Context, id string, item schema.User) error {
 	err = ExecTrans(ctx, a.TransModel, func(ctx context.Context) error {
 		addUserRoles, delUserRoles := a.compareUserRoles(ctx, oldItem.UserRoles, item.UserRoles)
 		for _, rmitem := range addUserRoles {
-			rmitem.ID = uuid.NewID()
+			rmitem.ID = noworker.NewID()
 			rmitem.UserID = id
 			err := a.UserRoleModel.Create(ctx, *rmitem)
 			if err != nil {

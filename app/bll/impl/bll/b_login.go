@@ -9,9 +9,9 @@ import (
 	"github.com/ops-cn/admin/app/bll"
 	"github.com/ops-cn/admin/app/model"
 	"github.com/ops-cn/common/auth"
-	"github.com/ops-cn/common/captcha"
 	"github.com/ops-cn/common/errors"
 	"github.com/ops-cn/common/schema"
+	"github.com/ops-cn/common/thirdparty/captcha"
 	"github.com/ops-cn/common/util"
 )
 

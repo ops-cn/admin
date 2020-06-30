@@ -50,6 +50,6 @@ require (
 	golang.org/x/time v0.0.0-20200416051211-89c76fbcd5d1
 	golang.org/x/tools v0.0.0-20200619210111-0f592d2728bb // indirect
 	google.golang.org/genproto v0.0.0-20200620020550-bd6e04640131 // indirect
-	google.golang.org/grpc v1.29.1 // indirect
 	honnef.co/go/tools v0.0.1-2020.1.4 // indirect
 )
+ replace google.golang.org/grpc => google.golang.org/grpc v1.26.0

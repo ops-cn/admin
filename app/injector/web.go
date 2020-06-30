@@ -56,7 +56,7 @@ func InitGinEngine(r router.IRouter) *gin.Engine {
 
 	// Swagger
 	if config.C.Swagger {
-		app.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+		app.GET("/api/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	}
 
 	// Website

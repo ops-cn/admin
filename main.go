@@ -17,7 +17,7 @@ func main() {
 	ctx := logger.NewTraceIDContext(context.Background(), "main")
 
 	service := web.NewService(
-		web.Name("ops-cn.admin"),
+		web.Name("ops.cn.api"),
 		web.Flags(
 			&cli.StringFlag{
 				Name:     "conf",
@@ -40,7 +40,7 @@ func main() {
 				Usage: "静态站点目录",
 			},
 		),
-		web.Address(":10088"),
+		web.Address(":10087"),
 	)
 	service.Init(
 		web.Action(func(c *cli.Context) {

@@ -1,8 +1,10 @@
 package api
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
+	"github.com/micro/go-micro/v2/metadata"
 	"github.com/ops-cn/admin/app/bll"
 	"github.com/ops-cn/common/config"
 	"github.com/ops-cn/common/errors"
@@ -23,6 +25,11 @@ type Login struct {
 // GetCaptcha 获取验证码信息
 func (a *Login) GetCaptcha(c *gin.Context) {
 	ctx := c.Request.Context()
+	md, ok := metadata.FromContext(ctx)
+	if !ok {
+		fmt.Println("无metadata")
+	}
+	fmt.Println(md)
 	item, err := a.LoginBll.GetCaptcha(ctx, config.C.Captcha.Length)
 	if err != nil {
 		ginplus.ResError(c, err)

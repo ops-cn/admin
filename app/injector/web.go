@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/ops-cn/admin/app/middleware"
 	"github.com/ops-cn/admin/app/router"
+
 	"github.com/ops-cn/common/config"
 	"github.com/ops-cn/common/thirdparty/gzip"
 	ginSwagger "github.com/swaggo/gin-swagger"
@@ -19,13 +20,23 @@ func GetRouter() *gin.Engine {
 // InitGinEngine 初始化gin引擎
 func InitGinEngine(r router.IRouter) *gin.Engine {
 	gin.SetMode(config.C.RunMode)
+	/*re, err := reporter.NewGRPCReporter("192.168.1.156:11800")
+	if err != nil {
+		log.Fatalf("new reporter error %v \n", err)
+	}
+	//defer re.Close()
+
+	tracer, err := go2sky.NewTracer("gin-server", go2sky.WithReporter(re))
+	if err != nil {
+		log.Fatalf("create tracer error %v \n", err)
+	}*/
 
 	app = gin.New()
 	app.NoMethod(middleware.NoMethodHandler())
 	app.NoRoute(middleware.NoRouteHandler())
 
 	prefixes := r.Prefixes()
-
+	//app.Use(g.Middleware(app, tracer))
 	// Trace ID
 	app.Use(middleware.TraceMiddleware(middleware.AllowPathPrefixNoSkipper(prefixes...)))
 
